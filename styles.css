@@ -1,9 +1,7 @@
 :root {
-  --bg-soft: #f8cbe8;
-  --panel: #f5f5f6;
+  --bg-soft: #e6a2d9;
+  --panel: #ececee;
   --text: #1c1c1f;
-  --pink: #ff5fa6;
-  --pink-dark: #f0328c;
 }
 
 * {
@@ -15,33 +13,52 @@ body {
   font-family: Arial, sans-serif;
   color: var(--text);
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.42) 0 2px, transparent 3px),
-    radial-gradient(circle at 80% 35%, rgba(255, 255, 255, 0.35) 0 3px, transparent 4px),
-    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 65%, rgba(255, 255, 255, 0.25) 0 2px, transparent 3px),
-    radial-gradient(circle at 7% 15%, transparent 28px, rgba(255, 214, 236, 0.7) 28px 31px, transparent 31px) 0 0 / 180px 180px,
-    radial-gradient(circle at 83% 22%, transparent 24px, rgba(255, 214, 236, 0.7) 24px 27px, transparent 27px) 0 0 / 180px 180px,
-    radial-gradient(circle at 50% 75%, transparent 26px, rgba(255, 214, 236, 0.7) 26px 29px, transparent 29px) 0 0 / 180px 180px,
-    var(--bg-soft);
+  background-color: var(--bg-soft);
+  background-image:
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png");
+  background-size: 64px, 52px, 78px, 160px, 120px, 180px;
+  background-position: 9% 18%, 72% 14%, 86% 72%, 16% 72%, 58% 84%, 85% 42%;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image:
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png");
+  background-size: 84px, 150px;
+  background-position: 36% 28%, 42% 58%;
+  background-repeat: no-repeat;
 }
 
 .page {
   max-width: 1320px;
-  margin: 28px auto 38px;
-  padding: 0 24px;
+  margin: 30px auto 40px;
+  padding: 0 26px;
+  position: relative;
+  z-index: 1;
 }
 
 .card {
   background: var(--panel);
-  border-radius: 18px;
+  border-radius: 16px;
 }
 
 .hero {
-  padding: 28px 36px;
+  padding: 30px 38px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 36px;
+  align-items: center;
 }
 
 .hero__brand {
@@ -51,141 +68,113 @@ body {
 }
 
 .kitty-face {
-  font-size: 144px;
-  line-height: 1;
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
 }
 
 h1 {
-  margin: 0 0 12px;
-  font-size: 62px;
-  font-weight: 600;
+  margin: 0 0 16px;
+  font-size: 58px;
+  font-weight: 500;
 }
 
 .hero p {
   margin: 0;
-  font-size: 36px;
-  line-height: 1.2;
-  max-width: 620px;
+  font-size: 50px;
+  line-height: 1.1;
+  max-width: 650px;
 }
 
 .hero__banner {
-  min-height: 280px;
+  width: 100%;
+  height: 280px;
   border-radius: 16px;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(255, 0, 102, 0.9) 0 16px, transparent 17px),
-    radial-gradient(circle at 40% 70%, rgba(255, 0, 102, 0.8) 0 14px, transparent 15px),
-    radial-gradient(circle at 70% 25%, rgba(255, 0, 102, 0.8) 0 17px, transparent 18px),
-    radial-gradient(circle at 85% 75%, rgba(255, 0, 102, 0.85) 0 13px, transparent 14px),
-    repeating-linear-gradient(90deg, #ffe8f4 0 48px, #fff7fb 48px 95px);
+  object-fit: cover;
 }
 
 .catalog {
   margin-top: 14px;
-  padding: 30px 40px 40px;
+  padding: 32px 50px 44px;
 }
 
 h2 {
-  margin: 0;
-  font-size: 58px;
-  font-weight: 600;
-}
-
-.catalog__subtitle {
-  margin: 8px 0 28px;
-  font-size: 28px;
+  margin: 0 0 24px;
+  font-size: 56px;
+  font-weight: 500;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 24px;
+  gap: 34px;
 }
 
 .product {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 4px;
-  min-height: 230px;
-  padding: 16px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #fff;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 170px;
 }
 
-.product:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+.product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-.product__name {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.product__price {
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.product--gel {
-  background: linear-gradient(145deg, #f3b4d4, #ee8bbb);
-}
-
-.product--computer {
-  background: linear-gradient(145deg, #f6b8de, #dd7ebd);
-}
-
-.product--cup {
-  background: linear-gradient(145deg, #e0b7e5, #c48ad4);
-}
-
-.product--hoodie {
-  background: linear-gradient(145deg, #f6c8de, #ef9dc3);
-}
-
-.product--case {
-  background: linear-gradient(145deg, #ff9b9b, #f16f7a);
+.product:hover img {
+  transform: scale(1.03);
 }
 
 .product-page {
+  margin: 0;
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 24px;
 }
 
-.product-card {
-  width: min(760px, 100%);
-  background: var(--panel);
+.product-full {
+  width: min(1100px, 100%);
+}
+
+.product-frame {
+  background: rgba(255, 255, 255, 0.86);
   border-radius: 18px;
-  padding: 30px;
+  padding: 20px;
 }
 
-.product-card h2 {
-  margin: 0 0 12px;
-  font-size: 48px;
+.product-full img {
+  width: 100%;
+  height: min(76vh, 760px);
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 12px;
 }
 
-.product-card p {
-  margin: 0 0 10px;
-  font-size: 28px;
+.product-meta {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 }
 
-.product-card .price {
-  font-size: 36px;
+.price {
+  font-size: 42px;
   font-weight: 700;
-  color: var(--pink-dark);
+  color: #d12073;
+  margin: 0;
 }
 
 .back-link {
-  display: inline-block;
-  margin-top: 14px;
   text-decoration: none;
   color: #c01774;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -199,10 +188,10 @@ h2 {
   }
 
   h1 {
-    font-size: 50px;
+    font-size: 46px;
   }
 
   .hero p {
-    font-size: 30px;
+    font-size: 34px;
   }
 }
