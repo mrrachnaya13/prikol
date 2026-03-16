@@ -1,0 +1,197 @@
+:root {
+  --bg-soft: #e6a2d9;
+  --panel: #ececee;
+  --text: #1c1c1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  min-height: 100vh;
+  background-color: var(--bg-soft);
+  background-image:
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png");
+  background-size: 64px, 52px, 78px, 160px, 120px, 180px;
+  background-position: 9% 18%, 72% 14%, 86% 72%, 16% 72%, 58% 84%, 85% 42%;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  background-image:
+    url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
+    url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png");
+  background-size: 84px, 150px;
+  background-position: 36% 28%, 42% 58%;
+  background-repeat: no-repeat;
+}
+
+.page {
+  max-width: 1320px;
+  margin: 30px auto 40px;
+  padding: 0 26px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 16px;
+}
+
+.hero {
+  padding: 30px 38px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero__brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.kitty-face {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 58px;
+  font-weight: 500;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.1;
+  max-width: 650px;
+}
+
+.hero__banner {
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.catalog {
+  margin-top: 14px;
+  padding: 32px 50px 44px;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 56px;
+  font-weight: 500;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.product {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 170px;
+}
+
+.product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.product:hover img {
+  transform: scale(1.03);
+}
+
+.product-page {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.product-full {
+  width: min(1100px, 100%);
+}
+
+.product-frame {
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.product-full img {
+  width: 100%;
+  height: min(76vh, 760px);
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.product-meta {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: 42px;
+  font-weight: 700;
+  color: #d12073;
+  margin: 0;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #c01774;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .hero p {
+    font-size: 34px;
+  }
+}
