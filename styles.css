@@ -1,7 +1,9 @@
 :root {
-  --pink-bg: #d689cb;
-  --panel: #e9e9e9;
-  --text: #151515;
+  --bg-soft: #f8cbe8;
+  --panel: #f5f5f6;
+  --text: #1c1c1f;
+  --pink: #ff5fa6;
+  --pink-dark: #f0328c;
 }
 
 * {
@@ -10,129 +12,181 @@
 
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
   color: var(--text);
+  min-height: 100vh;
   background:
-    radial-gradient(circle at 30px 30px, transparent 22px, #f4b3cd 22px 26px, transparent 26px) 0 0 / 130px 130px,
-    radial-gradient(circle at 90px 90px, transparent 22px, #f4b3cd 22px 26px, transparent 26px) 0 0 / 130px 130px,
-    var(--pink-bg);
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.42) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 35%, rgba(255, 255, 255, 0.35) 0 3px, transparent 4px),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.35) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 65%, rgba(255, 255, 255, 0.25) 0 2px, transparent 3px),
+    radial-gradient(circle at 7% 15%, transparent 28px, rgba(255, 214, 236, 0.7) 28px 31px, transparent 31px) 0 0 / 180px 180px,
+    radial-gradient(circle at 83% 22%, transparent 24px, rgba(255, 214, 236, 0.7) 24px 27px, transparent 27px) 0 0 / 180px 180px,
+    radial-gradient(circle at 50% 75%, transparent 26px, rgba(255, 214, 236, 0.7) 26px 29px, transparent 29px) 0 0 / 180px 180px,
+    var(--bg-soft);
 }
 
 .page {
-  max-width: 1280px;
-  margin: 30px auto 40px;
-  padding: 0 20px;
-  position: relative;
+  max-width: 1320px;
+  margin: 28px auto 38px;
+  padding: 0 24px;
 }
 
 .card {
   background: var(--panel);
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .hero {
+  padding: 28px 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
-  padding: 26px 44px;
-  align-items: stretch;
+  gap: 32px;
 }
 
 .hero__brand {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
-.kitty {
-  font-size: 160px;
+.kitty-face {
+  font-size: 144px;
   line-height: 1;
 }
 
 h1 {
-  margin: 0 0 16px;
-  font-size: 48px;
-  font-weight: 500;
-}
-
-p {
-  margin: 0;
-  font-size: 48px;
-  line-height: 1.2;
+  margin: 0 0 12px;
+  font-size: 62px;
+  font-weight: 600;
 }
 
 .hero p {
-  font-size: 32px;
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.2;
+  max-width: 620px;
 }
 
-.hero__image {
+.hero__banner {
+  min-height: 280px;
   border-radius: 16px;
   background:
-    radial-gradient(circle at 20% 20%, #ff2f8f 0 24px, transparent 25px),
-    radial-gradient(circle at 70% 60%, #ff2f8f 0 22px, transparent 23px),
-    radial-gradient(circle at 85% 20%, #ff2f8f 0 16px, transparent 17px),
-    repeating-linear-gradient(
-      90deg,
-      #f8d8e6 0 46px,
-      #fff8f7 46px 96px
-    );
-  min-height: 278px;
+    radial-gradient(circle at 20% 30%, rgba(255, 0, 102, 0.9) 0 16px, transparent 17px),
+    radial-gradient(circle at 40% 70%, rgba(255, 0, 102, 0.8) 0 14px, transparent 15px),
+    radial-gradient(circle at 70% 25%, rgba(255, 0, 102, 0.8) 0 17px, transparent 18px),
+    radial-gradient(circle at 85% 75%, rgba(255, 0, 102, 0.85) 0 13px, transparent 14px),
+    repeating-linear-gradient(90deg, #ffe8f4 0 48px, #fff7fb 48px 95px);
 }
 
 .catalog {
   margin-top: 14px;
-  padding: 32px 50px 44px;
+  padding: 30px 40px 40px;
 }
 
 h2 {
-  margin: 0 0 26px;
-  font-size: 56px;
-  font-weight: 500;
+  margin: 0;
+  font-size: 58px;
+  font-weight: 600;
+}
+
+.catalog__subtitle {
+  margin: 8px 0 28px;
+  font-size: 28px;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 40px;
+  gap: 24px;
 }
 
 .product {
-  aspect-ratio: 1 / 1;
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  min-height: 230px;
+  padding: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.product__name {
   font-size: 30px;
   font-weight: 700;
-  color: #fff;
+}
+
+.product__price {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.product--gel {
+  background: linear-gradient(145deg, #f3b4d4, #ee8bbb);
+}
+
+.product--computer {
+  background: linear-gradient(145deg, #f6b8de, #dd7ebd);
+}
+
+.product--cup {
+  background: linear-gradient(145deg, #e0b7e5, #c48ad4);
+}
+
+.product--hoodie {
+  background: linear-gradient(145deg, #f6c8de, #ef9dc3);
+}
+
+.product--case {
+  background: linear-gradient(145deg, #ff9b9b, #f16f7a);
+}
+
+.product-page {
+  min-height: 100vh;
   display: grid;
-  place-items: end center;
-  padding-bottom: 10px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  place-items: center;
+  padding: 24px;
 }
 
-.product:nth-child(1) {
-  background: linear-gradient(145deg, #f2b8cd, #ea8ab3);
+.product-card {
+  width: min(760px, 100%);
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 30px;
 }
 
-.product:nth-child(2) {
-  background: linear-gradient(145deg, #f7b8dd, #da79b0);
+.product-card h2 {
+  margin: 0 0 12px;
+  font-size: 48px;
 }
 
-.product:nth-child(3) {
-  background: linear-gradient(145deg, #d9b3d8, #bf8fd5);
+.product-card p {
+  margin: 0 0 10px;
+  font-size: 28px;
 }
 
-.product:nth-child(4) {
-  background: linear-gradient(145deg, #f6c4d7, #f09bbf);
+.product-card .price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--pink-dark);
 }
 
-.product:nth-child(5) {
-  background: linear-gradient(145deg, #ff8e84, #ec5d63);
-}
-
-.corner-kitty {
-  position: absolute;
-  bottom: -56px;
-  left: 18px;
-  font-size: 84px;
+.back-link {
+  display: inline-block;
+  margin-top: 14px;
+  text-decoration: none;
+  color: #c01774;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 @media (max-width: 1100px) {
@@ -142,5 +196,13 @@ h2 {
 
   .products {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .hero p {
+    font-size: 30px;
   }
 }
