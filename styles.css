@@ -32,6 +32,7 @@ body::before {
   inset: 0;
   pointer-events: none;
   opacity: 0.25;
+  z-index: -1;
   background-image:
     url("https://cdn-icons-png.flaticon.com/512/13398/13398479.png"),
     url("https://png.klev.club/uploads/posts/2024-05/png-klev-club-hfs6-p-serdtse-grafika-png-18.png");
