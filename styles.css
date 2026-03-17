@@ -149,11 +149,7 @@ h2 {
 
 .product-full img {
   width: 100%;
-  height: min(76vh, 760px);
-  object-fit: contain;
-  display: block;
-  background: #fff;
-  border-radius: 12px;
+  height: auto;
 }
 
 .product-meta {
